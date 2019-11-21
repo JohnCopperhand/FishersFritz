@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 900px;
+  width: 1600px;
+  display: block;
+  background: #white;
+}
+
+.container {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.player1,
+.player2 {
+  background-color: red;
+  height: 60px;
+  width:5000px;
+  display:block;
+  /* margin-bottom: 50px; */
+
+}
+
+/* .player2 {
+  background-color: red;
+  height: 56px;
+  width: auto;
+  display: grid;
+  margin-top: 45px;
+} */
+
+.board {
+  width: 360px;
+  padding: 20px;
+  margin:2%;
+  display: grid;
+  grid-template-columns: repeat(5,56px);
+  grid-template-rows: repeat(5,56px);
+  grid-gap: 10px;
+  position: relative;
+  background-color: beige;
+  /* z-index: -2 */
+}
+.toggle {
+    /* width: calc(50px);
+    height: calc(50px); */
+    width: 50px;
+    height: 50px;
+    margin: 2px;
+    display: inline-grid;
+    transform: scale(1);
+
+}
+.karten {
+  width: calc(50px);
+  height: calc(50px);
+  margin: 2px;
+  position: inline-grid;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .2s;
+  z-index: +2;
+  /* box-shadow: 1px 1px 1px rgba(0,0,0,.3); */
+}
+
+.karten:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.karten.flip {
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  position: absolute;
+  border-radius: 2px;
+  backface-visibility: hidden;
+  visibility: visible;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
