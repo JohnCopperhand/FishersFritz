@@ -1,2 +1,2 @@
 # FishersFritz
-A digital copy of a competitive, 2 plyer memory board game, that I really like.
+A digital copy of a competitive, 2 player memory board game
