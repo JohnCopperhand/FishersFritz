@@ -1,4 +1,3 @@
-
 // var parentElement = 0;
 // var kartenfarbe = 0;
 // var kartenfisch = 0;
