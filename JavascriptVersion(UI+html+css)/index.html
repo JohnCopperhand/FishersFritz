@@ -1,218 +1,229 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<style>
-div#container{
-  background:#CCC;
-	border:#999 1px solid;
-	width:1400px;
-	height:770px;
-	padding:24px;
-	margin:0px auto;
-  text-align: center;
-}
-div#dice{
-  float: left;
-  background:#DDD;
-	border:#999 1px solid;
-  width:250px;
-  height:250px;
-  margin-top: 100px;
-  margin-left: 100px;
+  <meta charset="UTF-8">
 
-}
-div#memory_board{
-	background:#CCC;
-	border:#999 1px solid;
-	width:350px;
-	height:350px;
-	padding:30px;
-	margin:30px auto;
-}
-div#player1_board{
-    background:#DDD;
-	border:#999 1px solid;
-	width:1360px;
-	height:66px;
-	padding:10px;
-	margin:5px auto;
-    vertical-align: top;
-}
-div#player2_board{
-    background:#DDD;
-	border:#999 1px solid;
-	width:1360px;
-	height:60px;
-	padding:10px;
-	margin:5px auto;
-    vertical-align: top;
-}
+  <title>Memory Game</title>
 
-
-div#memory_board > div{
-	background: url(tile_bg.jpg) no-repeat;
-	border:#000 1px solid;
-	width:50px;
-	height:50px;
-	float:left;
-	margin:4px;
-	padding:5px;
-	font-size:12px;
-	cursor:pointer;
-	text-align:center;
-    vertical-align: top;
-}
-div#player1_board > div{
-	background: url(tile_bg.jpg) no-repeat;
-	border:#000 1px solid;
-	width:50px;
-	height:50px;
-	float:left;
-	margin:3px;
-	padding:5px;
-	font-size:12px;
-	cursor:pointer;
-	text-align:left;
-  vertical-align: top;
-}
-div#player2_board > div{
-  background: url(tile_bg.jpg) no-repeat;
-	border:#000 1px solid;
-	width:50px;
-	height:50px;
-	float:left;
-	margin:3px;
-	padding:5px;
-	font-size:12px;
-	cursor:pointer;
-	text-align:left;
-  vertical-align: top;
-}
-
-</style>
-
-<script>
-var Kugel = 'Kug'
-var Forelle = 'For'
-var Krake = 'Kra'
-var Saege = 'Sae'
-var joker = 'Seestern'
-
-var rot = 'rot'
-var gruen = 'gru'
-var blau = 'bla'
-var gelb = 'gel'
-var weiss = 'joker'
-
-var Schuh = 'Schuh'
-
-var Kugel_rot = [rot, Kugel];
-var Kugel_gruen = [gruen, Kugel];
-var Kugel_blau = [blau, Kugel];
-var Kugel_gelb = [gelb, Kugel];
-
-var Saege_rot = [rot, Saege];
-var Saege_gruen = [gruen, Saege];
-var Saege_blau = [blau, Saege];
-var Saege_gelb = [gelb, Saege];
-
-var Forelle_rot = [rot, Forelle];
-var Forelle_blau = [blau, Forelle];
-var Forelle_gelb = [gelb, Forelle];
-var Forelle_gruen = [gruen, Forelle];
-
-var Krake_rot = [rot, Krake];
-var Krake_gruen = [gruen, Krake];
-var Krake_blau = [blau, Krake];
-var Krake_gelb = [gelb, Krake];
-
-var board = [Kugel_rot, Kugel_blau, Kugel_gelb, Kugel_gruen, Schuh, Saege_blau, Saege_gelb, Saege_gruen, Saege_rot, Schuh, Forelle_blau, Forelle_gelb, Forelle_gruen, Forelle_rot, Schuh, Krake_blau, Krake_gelb, Krake_gruen, Krake_rot, Schuh, Schuh, Schuh, Schuh, Schuh, Schuh];
-var memory_values = [];
-var memory_tile_ids = [];
-var tiles_flipped = 0;
-
-function load_deck() {
-
-
-}
-
-</script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="container">
-    <div id="player1_board">
-      <div id=pos1p1></div>
-      <div id=pos2p1></div>
-      <div id=pos3p1></div>
-      <div id=pos4p1></div>
-      <div id=pos5p1></div>
-      <div id=pos6p1></div>
-      <div id=pos7p1></div>
-      <div id=pos8p1></div>
-      <div id=pos9p1></div>
-      <div id=pos10p1></div>
-      <div id=pos11p1></div>
-      <div id=pos12p1></div>
-      <div id=pos13p1></div>
-      <div id=pos14p1></div>
-      <div id=pos15p1></div>
-      <div id=pos16p1></div>
-      <div id=pos17p1></div>
-      <div id=pos18p1></div>
-      <div id=pos19p1></div>
-      <div id=pos20p1></div>
+
+
+    <div id="player1">
+
+            <div class="toggle" data-farbe="blue" data-fisch="forelle">
+                <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+                <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+            </div>
+            <div class="toggle" data-farbe="blue" data-fisch="forelle">
+                <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+                <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+            </div>
+            <div class="toggle" data-farbe="blue" data-fisch="forelle">
+                <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+                <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+            </div>
+            <div class="toggle" data-farbe="blue" data-fisch="forelle">
+                <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+                <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+            </div>
+
     </div>
-    <div id="dice"><h2>'grüner kug'</h2></div>
-    <div id="memory_board">
-      <div id=pos1></div>
-      <div id=pos2></div>
-      <div id=pos3></div>
-      <div id=pos4></div>
-      <div id=pos5></div>
-      <div id=pos6></div>
-      <div id=pos7></div>
-      <div id=pos8></div>
-      <div id=pos9></div>
-      <div id=pos10></div>
-      <div id=pos11></div>
-      <div id=pos12></div>
-      <div id=pos13></div>
-      <div id=pos14></div>
-      <div id=pos15></div>
-      <div id=pos16></div>
-      <div id=pos17></div>
-      <div id=pos18></div>
-      <div id=pos19></div>
-      <div id=pos20></div>
-      <div id=pos21></div>
-      <div id=pos22></div>
-      <div id=pos23></div>
-      <div id=pos24></div>
-      <div id=pos25></div>
+
+<p id="demo"></p>
+
+<div class="container">
+
+
+
+<div id="the-box">The box</div>
+
+  <div class="board">
+
+    <div class="karten">
+        <div class="toggle" data-farbe="blue" data-fisch="forelle">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
     </div>
-    <div id="player2_board">
-      <div id=pos1p2></div>
-      <div id=pos2p2></div>
-      <div id=pos3p2></div>
-      <div id=pos4p2></div>
-      <div id=pos5p2></div>
-      <div id=pos6p2></div>
-      <div id=pos7p2></div>
-      <div id=pos8p2></div>
-      <div id=pos9p2></div>
-      <div id=pos10p2></div>
-      <div id=pos11p2></div>
-      <div id=pos12p2></div>
-      <div id=pos13p2></div>
-      <div id=pos14p2></div>
-      <div id=pos15p2></div>
-      <div id=pos16p2></div>
-      <div id=pos17p2></div>
-      <div id=pos18p2></div>
-      <div id=pos19p2></div>
-      <div id=pos20p2></div>
+    <div class="karten" id="n1">
+        <div class="toggle" data-farbe="green" data-fisch="forelle">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
     </div>
+    <div class="karten" id="n2">
+        <div class="toggle" data-farbe="red" data-fisch="forelle">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten" id="n3">
+        <div class="toggle" data-farbe="yellow" data-fisch="forelle">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+
+    <div class="karten">
+        <div class="toggle" data-farbe="blue" data-fisch="kugel">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="green" data-fisch="kugel">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="red" data-fisch="kugel">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="yellow" data-fisch="kugel">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+
+    <div class="karten">
+        <div class="toggle" data-farbe="blue" data-fisch="saege">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="green" data-fisch="saege">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="red" data-fisch="saege">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="yellow" data-fisch="saege">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+
+    <div class="karten">
+        <div class="toggle" data-farbe="blue" data-fisch="krake">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="green" data-fisch="krake">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="red" data-fisch="krake">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="yellow" data-fisch="krake">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+    <div class="karten">
+        <div class="toggle" data-farbe="schuh" data-fisch="schuh">
+            <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+            <img class="front-face" src="../img/js-bassdge.svg" alt="JS Badge" />
+        </div>
+    </div>
+
+  </div>
+
+
+  <div class="player2">
+    <div class="toggle" data-farbe="grüner" data-fisch="Forellenfisch">
+      <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+      <img class="front-face" src="../img/js-badge.svg" alt="JS Badge" />
+    </div>
+  </div>
+
+
+
 </div>
-<script>newBoard();</script>
+<button id="Wuerfelknopf">Würfeln!</button>
+<!--
+   <div class="player2">
+      <div class="karten" data-farbe="blauer" data-fisch="Forellenfisch">
+        <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+        <img class="front-face" src="../img/js-badge.svg" alt="JS Badge" />
+      </div>
+      <div class="karten" data-farbe="blauer" data-fisch="Forellenfisch">
+        <img class="back-face" src="../img/wasser.jpg" alt="wasser" />
+        <img class="front-face" src="../img/js-badge.svg" alt="JS Badge" />
+      </div>
+   </div> -->
+
+
+
 </body>
+<script src="scripts.js"></script>
 </html>
